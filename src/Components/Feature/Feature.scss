@@ -1,0 +1,96 @@
+.feature {
+    height: 600px;
+
+    display: flex;
+    justify-items: center;
+    background-color: #013914;
+    color: white;
+
+    .container {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        .left {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            h1 {
+                font-size: 30px;
+                font-weight: bold;
+                width: 500px;
+
+                i{
+                    
+                    font-weight: 300;
+                }
+            }
+
+            .search {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: white;
+                width: 500px;
+                border-radius: 5px;
+
+                img {
+                    width: 25px;
+                    font-weight: bold;
+                    height: 20px;
+                    margin: 8px;
+
+                }
+
+                input {
+                    width: 385px;
+                    height: 40px;
+                    outline: none;
+                    color: black;
+                }
+
+                .searchinput {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+
+                }
+
+                .btn {
+                    background-color: aqua;
+                    padding: 8px;
+                    border-radius: 2px;
+
+                }
+
+
+            }
+
+            .popular {
+                button {
+                    margin: 8px;
+                    background-color: transparent;
+                    border: 1px solid white;
+                    border-radius: 20px;
+                    padding: 4px;
+                    font-size: 14px;
+
+
+                }
+            }
+
+        }
+
+
+        .right {
+            height: 100%;
+
+            img {
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+
+
+}
