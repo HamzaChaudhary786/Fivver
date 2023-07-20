@@ -15,7 +15,7 @@ const Gigs = () => {
       <div className=' p-14'>
         <div>
           <div className=' text-lg '>
-            <span><ion-icon name="home"></ion-icon></span>
+          
             <span> Fiverr
               /Graphics & Design
             </span>
@@ -41,7 +41,7 @@ const Gigs = () => {
               <input type='text' className='w-36 h-8 border outline-none ' placeholder='max' />
               <button className=' bg-green-500  text-center w-24 h-8 rounded text-white'>Apply</button>
             </div>
-            <div className='  w-60 relative align-middle '>
+            <div className='  w-60  align-middle '>
               <div className='flex  '>
                 <span className='w-16'>Sort By </span>
                 <span className='w-fit mr-2 font-bold'>{sort === "sales" ? "Sort By" : "Best Selling"}</span>

@@ -20,9 +20,9 @@ const Slide = () => {
     return (
         <>
             <div className='flex items-center  justify-center  '>
-                <div className='grid items-center justify-items-center text-4xl opacity-50 hover:opacity-100  cursor-pointer  '><ion-icon name="caret-back-outline" onClick={SlideLeft}></ion-icon></div>
+                <div className='grid items-center justify-items-center text-4xl text-opacity-50 hover:text-opacity-100  cursor-pointer  '><ion-icon name="caret-back-outline" onClick={SlideLeft}></ion-icon></div>
 
-                <div className='flex relative  items-center gap-6  w-[80%] h-full  overflow-x-scroll  transition-all ease-in-out duration-1000  scroll-smooth overflow-hidden scrollbar-hide' id='slide'>
+                <div className='flex relative  items-center gap-6  w-[80%] h-full  overflow-x-scroll  transition-all ease-in-out duration-1000  scroll-smooth overflow-hidden scrollbar-hide ' id='slide'>
                     {
                         cards.map((item) => {
 
@@ -49,7 +49,7 @@ const Slide = () => {
 
                     }
                 </div>
-                <div className='grid items-center justify-items-center text-4xl opacity-50 hover:opacity-100 text-black cursor-pointer'><ion-icon name="caret-forward-outline" onClick={SlideRight}></ion-icon></div>
+                <div className='grid items-center justify-items-center text-4xl text-opacity-50 hover:text-opacity-100 text-black cursor-pointer'><ion-icon name="caret-forward-outline" onClick={SlideRight}></ion-icon></div>
             </div>
 
 

@@ -7,7 +7,7 @@ import video from "../../assets/video.mp4"
 import Box from '../../Components/Box/Box'
 import ProjectCard from '../../Components/ProjectCard/ProjectCard'
 import GigCards from '../../Components/gigCards/GigCards'
-
+import tick from "../../assets/tick.png"
 const Home = () => {
   return (
     <>
@@ -18,19 +18,25 @@ const Home = () => {
         <div className="container w-[70%] mt-8 grid grid-cols-2 gap-x-12 items-center p-4 ">
           <div className="left  grid justify-items-start">
             <h1 className=' text-xl font-bold h-20 w-[80%]'>A Whole world of freelance talent at your finger tips</h1>
-            <div className=' items-center  p-1 opacity-70'>
-              <span className=' text-lg font-bold mt-1'><ion-icon name="checkmark-circle-outline"></ion-icon></span>
-              <span className='ml-2 align-top font-semibold mt-1'>The best for every budget </span>
+            <div className=' items-center  p-1 text-opacity-70'>
+              <div className='flex items-center'>
+                <img src={tick} className='h-4 w-4 text-lg font-bold mt-1' alt="" />
+                <span className='ml-2 align-top font-semibold mt-1'>The best for every budget </span>
+              </div>
               <p>We provide the high quality of services</p>
             </div>
-            <div className=' items-center mt-2 p-1 opacity-70'>
-              <span className=' text-lg font-bold mt-1'><ion-icon name="checkmark-circle-outline"></ion-icon></span>
-              <span className='ml-2 align-top font-semibold mt-1'>The best for every budget </span>
+            <div className=' items-center mt-2 p-1 text-opacity-70'>
+              <div className='flex items-center'>
+                <img src={tick} className='h-4 w-4 text-lg font-bold mt-1' alt="" />
+                <span className='ml-2 align-top font-semibold mt-1'>The best for every budget </span>
+              </div>
               <p>We provide the high quality of services</p>
 
-            </div><div className=' items-center mt-2 p-1 opacity-70'>
-              <span className=' text-lg font-bold mt-1'><ion-icon name="checkmark-circle-outline"></ion-icon></span>
-              <span className='ml-2 align-top font-semibold mt-1'>The best for every budget </span>
+            </div><div className=' items-center mt-2 p-1 text-opacity-70'>
+              <div className='flex items-center'>
+                <img src={tick} className='h-4 w-4 text-lg font-bold mt-1' alt="" />
+                <span className='ml-2 align-top font-semibold mt-1'>The best for every budget </span>
+              </div>
               <p>We provide the high quality of services</p>
             </div>
 
@@ -52,24 +58,30 @@ const Home = () => {
             <h1 className=' mt-6 text-xl w-[100%]'>Upgrade to a curated experience to access vetted talent and exclusive tools</h1>
 
             <div className=' items-center  p-1  mt-4'>
-              <span className=' text-2xl font-extrabold mt-1 opacity-70 '><ion-icon name="checkmark-circle-outline"></ion-icon></span>
-              <span className='ml-2 align-top text-xl font-semibold '>Talent matching </span>
+            <div className='flex items-center'>
+                <img src={tick} className='h-4 w-4 text-lg font-bold mt-1' alt="" />
+                <span className='ml-2 align-top font-semibold text-lg mt-1'>Talent Matching</span>
+              </div>
             </div>
 
             <div className=' items-center  p-1 '>
-              <span className=' text-2xl font-extrabold mt-1 opacity-70 '><ion-icon name="checkmark-circle-outline"></ion-icon></span>
-              <span className='ml-2 align-top text-lg font-semibold mt-1'>Team collaboration tools
-              </span>
+            <div className='flex items-center'>
+                <img src={tick} className='h-4 w-4 text-lg font-bold mt-1' alt="" />
+                <span className='ml-2 align-top font-semibold text-lg mt-1'>Team Collaboration Roles</span>
+              </div>
             </div>
 
             <div className=' items-center  p-1 '>
-              <span className=' text-2xl font-extrabold  mt-1 opacity-70 '><ion-icon name="checkmark-circle-outline"></ion-icon></span>
-              <span className='ml-2 align-top text-xl font-semibold mt-1'>The best for every budget </span>
+            <div className='flex items-center'>
+                <img src={tick} className='h-4 w-4 text-lg font-bold mt-1' alt="" />
+                <span className='ml-2 align-top font-semibold text-lg mt-1'>The Best For every Budget</span>
+              </div>
             </div>
             <div className=' items-center  p-1'>
-              <span className=' text-2xl font-extrabold mt-1 opacity-70 '><ion-icon name="checkmark-circle-outline"></ion-icon></span>
-              <span className='ml-2 align-top text-xl font-semibold '>Business payment solutions
-              </span>
+            <div className='flex items-center'>
+                <img src={tick} className='h-4 w-4 text-lg font-bold mt-1' alt="" />
+                <span className='ml-2 align-top font-semibold text-lg mt-1'>Bussiness Payement Solution</span>
+              </div>
             </div>
 
 

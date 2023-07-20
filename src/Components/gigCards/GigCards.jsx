@@ -1,6 +1,7 @@
 import React from 'react'
 import { gigs } from '../../data'
 import { Link } from 'react-router-dom';
+import stars from "../../assets/star.png"
 const GigCards = () => {
     return (
         <>
@@ -28,10 +29,12 @@ const GigCards = () => {
 
                                                 </div>
                                                 <p className=' w-[90%] mt-2'>{desc}</p>
-                                                <div className=' mt-2 align-top items-center'>
+                                                <div className=' flex mt-2 align-top items-center'>
 
-                                                    <span className='text-sm text-orange-400'><ion-icon name="star"></ion-icon></span>
-                                                    <span className='ml-2'>{star}<span className='opacity-70 text-gray-800'> (90)</span></span>
+                                                    <span className='text-sm text-orange-400'>            <img className='h-4  w-4' src={stars} alt="" />
+                                                    </span>
+
+                                                    <span className='ml-2'>{star}<span className='text-opacity-70 text-gray-800'> (90)</span></span>
 
                                                 </div>
                                                 <strong>

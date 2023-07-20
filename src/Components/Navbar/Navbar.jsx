@@ -61,6 +61,7 @@ const Navbar = () => {
                                                     currentUser?.isSeller && (
                                                         <>
                                                             <Link to="/gigs">Gigs</Link>
+                                                            <Link to="/mygigs">MyGigs</Link>
                                                             <Link to="/add">Add New Gigs</Link>
 
                                                         </>
@@ -94,10 +95,12 @@ const Navbar = () => {
                                 <Link to="/">Bussiness</Link>
 
                             </div>
+
                         </>
                     )
                 }
 
+                <hr className='w-screen' />
 
             </div>
         </>

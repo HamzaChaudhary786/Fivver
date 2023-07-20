@@ -25,7 +25,7 @@ const ProjectCard = () => {
                 </div>
 
                 <div className='flex items-center  justify-center mt-4 '>
-                    <div className='grid items-center justify-items-center text-4xl opacity-50 hover:opacity-100 text-black cursor-pointer  '><ion-icon name="caret-back-outline" onClick={SlideLeft}></ion-icon></div>
+                    <div className='grid items-center justify-items-center text-4xl text-opacity-50 hover:text-opacity-100 text-black cursor-pointer  '><ion-icon name="caret-back-outline" onClick={SlideLeft}></ion-icon></div>
 
                     <div className='flex relative  items-center gap-6  w-[94%] h-full  overflow-x-scroll  transition-all ease-in-out duration-1000  scroll-smooth overflow-hidden' id='slidep'>
                         {
@@ -46,9 +46,9 @@ const ProjectCard = () => {
                                                         <img src={pp} className='rounded-full object-cover h-10 w-10' />
                                                     </div>
 
-                                                    <div className='bg-white'>
+                                                    <div className=''>
                                                         <h1 className='font-semibold'>{username}</h1>
-                                                        <p className='opacity-60 text-center text-sm'>{cat}</p>
+                                                        <p className='text-opacity-60 text-center text-sm'>{cat}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -62,7 +62,7 @@ const ProjectCard = () => {
 
                         }
                     </div>
-                    <div className='grid items-center justify-items-center text-4xl opacity-50 hover:opacity-100 text-black cursor-pointer'><ion-icon name="caret-forward-outline" onClick={SlideRight}></ion-icon></div>
+                    <div className='grid items-center justify-items-center text-4xl text-opacity-50 hover:text-opacity-100 text-black cursor-pointer'><ion-icon name="caret-forward-outline" onClick={SlideRight}></ion-icon></div>
                 </div>
             </div>
 
