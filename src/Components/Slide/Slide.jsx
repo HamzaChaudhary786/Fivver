@@ -29,7 +29,7 @@ const Slide = () => {
                             const { title, desc, img, id } = item;
                             return (
                                 <>
-                                    <a href="#" target="_blank h-[100%]  ">
+                                    <a href="#" target="_blank">
                                         <div className='  flex h-64 w-64 rounded-xl  items-center duration-700 cursor-pointer  hover:scale-105 mt-4 '>
 
                                             <div>

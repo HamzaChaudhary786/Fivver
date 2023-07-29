@@ -10,6 +10,7 @@ import Order from './Pages/Orders/Order';
 import Message from './Pages/Messages/Message';
 import SMessage from './Pages/SMessage/SMessage';
 import Add from './Pages/Add/Add';
+import Bussiness from './Pages/Fiverr_Bussiness/Bussiness'
 
 const App = () => {
   return (
@@ -17,14 +18,15 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/gigs' element={<Gigs/>}/>
-        <Route path='/mygigs' element={<MyGigs/>}/>
-        <Route path ="/order" element={<Order/>}/>
-        <Route path='/sgig/:id' element={<SGig/>}/>
-        <Route path ="/smessage/:id" element={<SMessage/>}/>
-        <Route path='/add' element={<Add/>}/>
-        <Route path ="/message" element={<Message/>}/>
-      
+        <Route path='/gigs' element={<Gigs />} />
+        <Route path='/bussiness' element={<Bussiness />} />
+        <Route path='/mygigs' element={<MyGigs />} />
+        <Route path="/order" element={<Order />} />
+        <Route path='/sgig/:id' element={<SGig />} />
+        <Route path="/smessage/:id" element={<SMessage />} />
+        <Route path='/add' element={<Add />} />
+        <Route path="/message" element={<Message />} />
+
       </Routes>
       <Footer />
     </>

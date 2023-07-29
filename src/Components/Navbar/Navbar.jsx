@@ -44,11 +44,11 @@ const Navbar = () => {
                         </span>
                     </div>
                     <div className="links">
-                        <span>Fiverr Bussiness</span>
+                        <Link to="/bussiness">Fiverr Bussiness</Link>
                         <span>Explore</span>
                         <span>English</span>
                         <span>Sign In</span>
-                     
+
                         {!currentUser?.isSeller && <span>Become a Seller</span>}
                         {!currentUser && <button className='btn'>Join</button>}
                         {

@@ -1,3 +1,5 @@
+import Bussiness from "./Pages/Fiverr_Bussiness/Bussiness";
+
 export const cards = [
     {
         id: 1,
@@ -181,4 +183,137 @@ export const gigs = [
         star: 4,
         username: "Wilton Hunt",
     },
+
+
+];
+export const FBussiness = [
+    {
+        id: 1,
+        img: "https://smallbizclub.com/wp-content/uploads/2020/06/bigstock-Group-Of-Professional-Business-349068817.jpg",
+        title: "Micheal Worna",
+        color: "#AFEEEE"
+    },
+    {
+        id: 2,
+        img: "https://animemotivation.com/wp-content/uploads/2021/09/anime-business-woman-suit-tie-wallpaper.jpg",
+        title: "Misen Worna",
+        color: "#FFEBCD"
+    },
+    {
+        id: 3,
+        img: "https://www.gethow.org/wp-content/uploads/2018/05/start-a-business.jpg",
+        title: "Corp Worna",
+        color: "#FFF5EE"
+    },
+    {
+        id: 4,
+        img: "https://zameenblog.s3.amazonaws.com/blog/wp-content/uploads/2022/12/Blog-cover_1440x625.jpg",
+        title: "David Borna",
+        color: "#3cb371"
+    },
+    {
+        id: 5,
+        img: "https://pnptc-media.s3.amazonaws.com/images/LEJ7HJ5BEA.2e16d0ba.fill-600x400.jpg",
+        title: "Clark Wan",
+        color: "#ee82ee"
+    },
+    {
+        id: 6,
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUv-WmFqQx6U3IIeZOW3xl4pYrrk4yDfUr4g&usqp=CAU",
+        title: "Clark Wan",
+        color: "#FF7F50"
+    },
+    {
+        id: 7,
+        img: "https://darvideo.tv/wp-content/uploads/2021/11/Business-animation-videos.jpg",
+        title: "Clark Wan",
+        color: "#FFB6C1"
+    },
+
+    {
+        id: 8,
+        img: "https://www.corpnet.com/wp-content/uploads/2020/01/Business-Plan-Words-With-Red-Upward-Arrow.jpg",
+        title: "Clark Wan",
+        color: "#FFE4B5"
+    },
+    {
+        id: 9,
+        img: "https://www.founderjar.com/wp-content/uploads/2022/10/Top-Indian-Startups-To-Watch-1.png",
+        title: "Clark Wan",
+        color: "#E6E6FA"
+    },
+    {
+        id: 10,
+        img: "https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2015/09/Starting-a-Business-Checklist-Bplans-650x339.jpg",
+        title: "Clark Wan",
+        color: "#98FB98"
+    },
+
+
+
+];
+
+
+export const BCard=[
+    {
+        id:1,
+        title:"Micheal Clark",
+        desc:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, nam illo placeat dolore nostrum dignissimos, a repudiandae excepturi esse repellendus magnam velit, repellat nisi dicta alias labore! Perspiciatis, laborum doloribus.",
+        img:"https://images.pexels.com/photos/1680175/pexels-photo-1680175.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        company:"PSEB Software",
+        place:"Green Land, Lahore"
+
+
+    },
+    {
+        id:2,
+        title:"Micheal Clark",
+        desc:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, nam illo placeat dolore nostrum dignissimos, a repudiandae excepturi esse repellendus magnam velit, repellat nisi dicta alias labore! Perspiciatis, laborum doloribus.",
+        img:"https://images.pexels.com/photos/1680175/pexels-photo-1680175.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        company:"PSEB Software",
+        place:"Green Land, Lahore"
+
+
+    },
+    {
+        id:3,
+        title:"Micheal Clark",
+        desc:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, nam illo placeat dolore nostrum dignissimos, a repudiandae excepturi esse repellendus magnam velit, repellat nisi dicta alias labore! Perspiciatis, laborum doloribus.",
+        img:"https://images.pexels.com/photos/1680175/pexels-photo-1680175.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        company:"PSEB Software",
+        place:"Green Land, Lahore"
+
+
+    },
+    {
+        id:4,
+        title:"Micheal Clark",
+        desc:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, nam illo placeat dolore nostrum dignissimos, a repudiandae excepturi esse repellendus magnam velit, repellat nisi dicta alias labore! Perspiciatis, laborum doloribus.",
+        img:"https://images.pexels.com/photos/1680175/pexels-photo-1680175.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        company:"PSEB Software",
+        place:"Green Land, Lahore"
+
+
+    },
+    {
+        id:4,
+        title:"Micheal Clark",
+        desc:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, nam illo placeat dolore nostrum dignissimos, a repudiandae excepturi esse repellendus magnam velit, repellat nisi dicta alias labore! Perspiciatis, laborum doloribus.",
+        img:"https://images.pexels.com/photos/1680175/pexels-photo-1680175.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        company:"PSEB Software",
+        place:"Green Land, Lahore"
+
+
+    },,
+    {
+        id:4,
+        title:"Micheal Clark",
+        desc:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, nam illo placeat dolore nostrum dignissimos, a repudiandae excepturi esse repellendus magnam velit, repellat nisi dicta alias labore! Perspiciatis, laborum doloribus.",
+        img:"https://images.pexels.com/photos/1680175/pexels-photo-1680175.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        company:"PSEB Software",
+        place:"Green Land, Lahore"
+
+
+    },
+
 ];
