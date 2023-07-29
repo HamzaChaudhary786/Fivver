@@ -5,17 +5,19 @@ import logo from "../../Assets/logo.png"
 
 const Feature = () => {
     return (
-        <div className='feature grid w-[100%] justify-items-center'>
-            <div className="container w-[100%]">
-                <div className="left ">
+        <div className='feature grid w-[100%] h-auto justify-items-center p-4 '>
+            <div className="container w-[100%] h-auto">
+                <div className="left grid  ">
 
                     <h1>Find the right <i>freelance</i> service, right away</h1>
-                    <div className="search">
-                        <div className="searchinput">
-                            <img src={logo} />
-                            <input type="text" className='border-none hover:border-none' placeholder=' try building mobile app ' />
+                    <div className=''>
+                        <div className="search flex  bg-white w-[80%] md:w-auto rounded-lg">
+                            <div className="flex items-center w-[100%] ">
+                                <img src={logo} className='w-[25px] text-lg h-[20px] m-2 ' />
+                                <input type="text" className=' h-[40px] w-80 md:w-[100%] outline-none text-black' placeholder=' try building mobile app ' />
+                            </div>
+                            <button className='btn'>Search </button>
                         </div>
-                        <button className='btn'>Search </button>
                     </div>
                     <div className="popular">
                         <span>Popular:</span>
@@ -27,7 +29,7 @@ const Feature = () => {
                     </div>
 
                 </div>
-                <div className="right">
+                <div className="right ">
                     <img src={land} className='' />
 
                 </div>

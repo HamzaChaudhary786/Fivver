@@ -5,30 +5,30 @@ import stars from "../../assets/star.png"
 const GigCards = () => {
     return (
         <>
-            <div className=' grid justify-items-center items-center mt-4'>
-                <div className=' grid grid-cols-4 w-[96%] gap-8 justify-items-center items-center'>
+            <div className=' grid justify-items-center items-center mt-6  w-[100%]'>
+                <div className=' grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3   lg:grid-cols-3 xl:grid-cols-4 gap-2 w-[96%] '>
                     {
                         gigs.map((item) => {
                             const { id, img, pp, desc, username, price, star, } = item;
                             return (
                                 <>
                                     <Link to="/sgig/:id">
-                                        <section className=' h-96 w-80 rounded-t-xl border'>
-                                            <img src={img} className=' h-48 w-80 object-cover rounded-xl' />
-                                            <div className='p-3 w-80'>
-                                                <div className=' flex justify-start w-[100%] '>
-                                                    <div className=' flex  items-center mt-2 w-[50%]'>
+                                        <section className=' h-[100%] w-auto rounded-t-xl border'>
+                                            <img src={img} className=' h-auto w-auto md:w-80 object-cover rounded-xl' />
+                                            <div className='p-4 w-auto '>
+                                                <div className=' flex items-center justify-between w-[100%]  '>
+                                                    <div className=' flex  items-center mt-2 w-auto'>
                                                         <img src={pp} className=' h-8 w-8 rounded-full object-cover' />
                                                         <span className=' text-sm ml-2'>
                                                             {username}
                                                         </span>
                                                     </div>
-                                                    <div className='flex items-center w-[50%] justify-end'>
-                                                        <div className=' bg-indigo-950 text-white w-fit px-1 text-sm'> FIVERR'S CHOICE</div>
+                                                    <div className=''>
+                                                        <div className=' bg-indigo-950 text-white w-fit  text-sm'> FIVERR'S CHOICE</div>
                                                     </div>
 
                                                 </div>
-                                                <p className=' w-[90%] mt-2'>{desc}</p>
+                                                <p className=' w-auto mt-2'>{desc}</p>
                                                 <div className=' flex mt-2 align-top items-center'>
 
                                                     <span className='text-sm text-orange-400'>            <img className='h-4  w-4' src={stars} alt="" />

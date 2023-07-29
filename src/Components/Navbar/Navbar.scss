@@ -8,7 +8,7 @@
     position: sticky;
 
 
-    &.active{
+    &.active {
         background-color: white;
         color: black;
 
@@ -16,21 +16,13 @@
 
 
     .container {
-        width: 1200px;
+        width: 100%;
         display: flex;
         justify-content: space-between;
         padding: 20px 0px;
 
-        .logo {
-            font-size: 34px;
-            font-weight: bold;
 
-            .text {}
-
-            .dot {}
-
-        }
-
+       
         .links {
             display: flex;
             gap: 24px;
@@ -52,7 +44,7 @@
 
                 }
 
-                .option{
+                .option {
                     position: absolute;
                     top: 50px;
                     display: flex;
@@ -61,7 +53,7 @@
                     padding: 20px;
                     background-color: gray;
                     border: 10px;
-                    border:  1px solid lightgray;
+                    border: 1px solid lightgray;
 
 
                 }
@@ -88,14 +80,5 @@
 
     }
 
-    .menu {
-        
-        widows: 1200px;
-        padding: 10px 0px;
-        display: flex;
-        justify-content: space-between;
-        font-weight: 300;
-        color: gray;
-        width: 1200px;
-    }
+
 }

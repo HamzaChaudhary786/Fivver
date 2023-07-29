@@ -5,8 +5,8 @@ const Footer = () => {
         <>
             <hr className=' w-[100%] h-auto border mt-8'></hr>
 
-            <div className=' w-[100%] h-[70]'>
-                <div className=' grid gap-6 p-8 w-[100%] h-[70%] grid-cols-5 '>
+            <div className=' w-[100%] h-[70%] '>
+                <div className=' grid gap-6 p-8 w-[100%] h-[70%] grid-cols-2 md:grid-cols-3 lg:grid-cols-5 '>
 
                     <div>
                         <h1 className=' text-lg font-bold'>
