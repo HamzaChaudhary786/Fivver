@@ -21,8 +21,8 @@ const FiverrBuss = () => {
                             const { id, title, img, color } = item;
                             return (
                                 <>
-                                    <section className='w-[100%] h-[100%] grid justify-items-center rounded-lg ' style={{ backgroundColor: `${color}` }} >
-                                        <img src={img} alt="" className='h-36 w-36  object-contain ' />
+                                    <section className='w-[100%] h-52 grid justify-items-center rounded-lg ' style={{ backgroundColor: `${color}` }} >
+                                        <img src={img} alt="" className='h-32 w-36  object-contain ' />
                                         <span className='text-lg font-bold'>{title}</span>
 
                                     </section>
@@ -77,8 +77,41 @@ const FiverrBuss = () => {
                 </div>
 
 
-                <div>
+                <div className=' flex  justify-center items-center w-[100%] bg-teal-50 p-10'>
+                    <div className='flex items-center overflow-visible w-[400px] md:w-[700px] lg:w-[900px] text-center overflow-x-scroll gap-8'>
 
+                        {
+                            BCard.map((item) => {
+
+                                const { id, title, desc, place, img, company } = item;
+                                return (
+                                    <>
+                                        <div className=' bg-slate-200 p-4 md:p-8 flex items-center w-[400px] md:w-[700px] lg:w-[900px]  h-auto '>
+
+                                            <div className='w-[400px] h-auto md:w-[700px] lg:w-[900px] grid justify-items-center items-center p-2'>
+                                                <div className='h-auto w-[80%] text-lg leading-normal '>
+                                                    "{desc}"
+                                                </div>
+                                                <div className='flex gap-8 mt-6 items-center '>
+                                                    <div><img src={img} className=' h-12 w-12 rounded-full object-cover ' alt="" /></div>
+                                                    <div>
+                                                        <h1>{title}</h1>
+                                                        <span>{company}</span>
+                                                        <div>{place}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+                                    </>
+                                )
+                            })
+                        }
+
+                    </div>
                 </div>
 
 

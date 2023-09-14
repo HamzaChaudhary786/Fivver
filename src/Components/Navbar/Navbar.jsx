@@ -12,6 +12,8 @@ const Navbar = () => {
     }
     const [active, setActive] = useState(false);
     const [open, setOpen] = useState(true);
+    const [explore, setExplore] = useState(true);
+
     const [opened, setOpened] = useState(true);
 
 
@@ -45,9 +47,69 @@ const Navbar = () => {
                     </div>
                     <div className="links">
                         <Link to="/bussiness">Fiverr Bussiness</Link>
-                        <span>Explore</span>
+                        <span onClick={() => setExplore(!explore)}>Explore</span>
+                        {!explore &&
+
+                            <div className=' absolute bg-slate-400 w-96 h-96 top-16'>
+                                <div className=' flex gap-10'>
+                                    <div>
+                                        <div>
+                                            <h1>
+                                                Discover
+                                            </h1>
+                                            <span>Inspiring projects made on Fiverr</span>
+                                        </div>
+                                        <div>
+                                            <h1>
+                                                Guides
+                                            </h1>
+                                            <span>In-depth guides covering business topics</span>
+                                        </div>
+                                        <div>
+                                            <h1>
+                                                Learn
+                                            </h1>
+                                            <span>Professional online courses, led by experts</span>
+                                        </div>
+                                        <div>
+                                            <h1>
+                                                Logo Maker
+                                            </h1>
+                                            <span>Create your logo instantly</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <h1>
+                                                Discover
+                                            </h1>
+                                            <span>Inspiring projects made on Fiverr</span>
+                                        </div>
+                                        <div>
+                                            <h1>
+                                                Guides
+                                            </h1>
+                                            <span>In-depth guides covering business topics</span>
+                                        </div>
+                                        <div>
+                                            <h1>
+                                                Learn
+                                            </h1>
+                                            <span>Professional online courses, led by experts</span>
+                                        </div>
+                                        <div>
+                                            <h1>
+                                                Logo Maker
+                                            </h1>
+                                            <span>Create your logo instantly</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        }
                         <span>English</span>
-                        <span>Sign In</span>
+                        <Link to="/login">Sign In</Link>
 
                         {!currentUser?.isSeller && <span>Become a Seller</span>}
                         {!currentUser && <button className='btn'>Join</button>}
@@ -95,15 +157,120 @@ const Navbar = () => {
 
 
                                 <div className='group w-auto '>
-                                    <Link to="/" className='group' >Grahics & Design</Link>
+                                    <Link to="/" className='group ' >Grahics & Design</Link>
 
 
-                                    <div className='absolute hidden group-hover:block     hover:block'>
-                                        <div className='  mt-3 flex gap-x-8  bg-white text-black'>
-                                            <Link to="/">Grahics & Design</Link>
-                                            <Link to="/">Grahics & Design</Link>
-                                            <Link to="/">Grahics & Design</Link>
-                                            <Link to="/">Grahics & Design</Link>
+                                    <div className='absolute w-28 border-4 border-l-0 border-r-0 border-b-0   hover:border-t-blue-600 hidden group-hover:block     hover:block'>
+
+
+                                        <div className=' flex-wrap overflow-y-scroll w-screen  h-[1200px]  flex  gap-x-10 p-5 md:w-[1000px] md:h-[800px]  bg-gray-200 text-black mt-1 '>
+                                            <div className=''>
+                                                <h1 className=' font-bold'>
+                                                    Logo & Brand Identity
+                                                </h1>
+
+                                                <div className='mt-4 h-auto cursor-pointer'>
+                                                    <Link className=' hover:text-blue-600'>Brand Style Guides</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Business Cards & Stationery</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Fonts & Typography</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Business Cards & Stationery</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Portraits & Caricatures</Link><br />
+                                                </div>
+                                                <Link className=' hover:text-blue-600'>Logo Design</Link><br />
+
+                                                <h1 className=' font-bold mt-4'>Art & Illustration</h1>
+
+                                                <div className='mt-4 cursor-pointer'>
+                                                    <Link className=' hover:text-blue-600'>Logo Design</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Brand Style Guides</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Business Cards & Stationery</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Portraits & Caricatures</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Logo Design</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Brand Style Guides</Link><br />
+                                                </div>
+
+                                            </div>
+                                            <div>
+                                                <h1 className=' font-bold'>
+                                                    Logo & Brand Identity
+                                                </h1>
+
+                                                <div className=' mt-4 cursor-pointer'>
+                                                    <Link className=' hover:text-blue-600'>Logo Design</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Brand Style Guides</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Business Cards & Stationery</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Fonts & Typography</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Business Cards & Stationery</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Portraits & Caricatures</Link><br />
+
+                                                </div>
+
+                                                <h1 className=' font-bold mt-4'>Art & Illustration</h1>
+
+                                                <div className='mt-4 cursor-pointer'>
+                                                    <Link className=' hover:text-blue-600'>Logo Design</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Brand Style Guides</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Business Cards & Stationery</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Portraits & Caricatures</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Logo Design</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Brand Style Guides</Link><br />
+                                                </div>
+
+                                            </div>
+                                            <div>
+                                                <h1 className=' font-bold'>
+                                                    Logo & Brand Identity
+                                                </h1>
+
+                                                <div className=' mt-4 cursor-pointer'>
+                                                    <Link className=' hover:text-blue-600'>Logo Design</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Brand Style Guides</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Business Cards & Stationery</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Fonts & Typography</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Business Cards & Stationery</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Portraits & Caricatures</Link><br />
+                                                </div>
+
+                                                <h1 className=' font-bold mt-4'>Art & Illustration</h1>
+
+                                                <div className='mt-4 cursor-pointer'>
+                                                    <Link className=' hover:text-blue-600'>Logo Design</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Brand Style Guides</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Business Cards & Stationery</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Portraits & Caricatures</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Logo Design</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Brand Style Guides</Link><br />
+                                                </div>
+
+                                            </div>
+
+                                            <div>
+                                                <h1 className=' font-bold '>
+                                                    Logo & Brand Identity
+                                                </h1>
+
+                                                <div className=' mt-4 cursor-pointer'>
+                                                    <Link className=' hover:text-blue-600'>Logo Design</Link>
+                                                    <Link className=' hover:text-blue-600'>Brand Style Guides</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Business Cards & Stationery</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Fonts & Typography</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Business Cards & Stationery</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Portraits & Caricatures</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Fonts & Typography</Link><br />
+                                                </div>
+
+                                                <h1 className=' font-bold mt-4'>Art & Illustration</h1>
+                                                <div className=' mt-4 cursor-pointer'>
+
+                                                    <Link className=' hover:text-blue-600'>Logo Design</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Brand Style Guides</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Business Cards & Stationery</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Portraits & Caricatures</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Logo Design</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Brand Style Guides</Link><br />
+                                                </div>
+
+                                            </div>
 
                                         </div>
                                     </div>
@@ -114,28 +281,33 @@ const Navbar = () => {
                                 <div className=' group w-auto'>
                                     <Link to="/" className=' group'>Video & Animation</Link>
 
-                                    <div className='absolute group-hover:block hover:block hidden   h-auto w-auto'>
-                                        <div className=' flex gap-x-9 p-10 bg-white text-black mt-3'>
-                                            <div>
+                                    <div className='absolute  group-hover:block hover:block hidden   w-32 border-4 border-b-0 border-r-0 border-l-0 hover:border-t-blue-600 h-auto '>
+
+                                        <div className=' flex gap-x-10 p-5 w-[1000px] h-[800px]  bg-gray-200 text-black mt-1 '>
+                                            <div className=''>
                                                 <h1 className=' font-bold'>
                                                     Logo & Brand Identity
                                                 </h1>
 
-                                                <Link>Logo Design</Link>
-                                                <Link>Brand Style Guides</Link>
-                                                <Link>Business Cards & Stationery</Link>
-                                                <Link>Fonts & Typography</Link>
-                                                <Link>Business Cards & Stationery</Link>
-                                                <Link>Portraits & Caricatures</Link>
+                                                <div className='mt-4 h-auto cursor-pointer'>
+                                                    <Link className=' hover:text-blue-600'>Brand Style Guides</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Business Cards & Stationery</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Fonts & Typography</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Business Cards & Stationery</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Portraits & Caricatures</Link><br />
+                                                </div>
+                                                <Link className=' hover:text-blue-600'>Logo Design</Link><br />
 
-                                                <h1 className=' font-bold'>Art & Illustration</h1>
+                                                <h1 className=' font-bold mt-4'>Art & Illustration</h1>
 
-                                                <Link>Logo Design</Link>
-                                                <Link>Brand Style Guides</Link>
-                                                <Link>Business Cards & Stationery</Link>
-                                                <Link>Portraits & Caricatures</Link>
-                                                <Link>Logo Design</Link>
-                                                <Link>Brand Style Guides</Link>
+                                                <div className='mt-4 cursor-pointer'>
+                                                    <Link className=' hover:text-blue-600'>Logo Design</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Brand Style Guides</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Business Cards & Stationery</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Portraits & Caricatures</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Logo Design</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Brand Style Guides</Link><br />
+                                                </div>
 
                                             </div>
                                             <div>
@@ -143,43 +315,26 @@ const Navbar = () => {
                                                     Logo & Brand Identity
                                                 </h1>
 
-                                                <Link>Logo Design</Link>
-                                                <Link>Brand Style Guides</Link>
-                                                <Link>Business Cards & Stationery</Link>
-                                                <Link>Fonts & Typography</Link>
-                                                <Link>Business Cards & Stationery</Link>
-                                                <Link>Portraits & Caricatures</Link>
+                                                <div className=' mt-4 cursor-pointer'>
+                                                    <Link className=' hover:text-blue-600'>Logo Design</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Brand Style Guides</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Business Cards & Stationery</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Fonts & Typography</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Business Cards & Stationery</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Portraits & Caricatures</Link><br />
 
-                                                <h1 className=' font-bold'>Art & Illustration</h1>
+                                                </div>
 
-                                                <Link>Logo Design</Link>
-                                                <Link>Brand Style Guides</Link>
-                                                <Link>Business Cards & Stationery</Link>
-                                                <Link>Portraits & Caricatures</Link>
-                                                <Link>Logo Design</Link>
-                                                <Link>Brand Style Guides</Link>
+                                                <h1 className=' font-bold mt-4'>Art & Illustration</h1>
 
-                                            </div>
-                                            <div>
-                                                <h1 className=' font-bold'>
-                                                    Logo & Brand Identity
-                                                </h1>
-
-                                                <Link>Logo Design</Link>
-                                                <Link>Brand Style Guides</Link>
-                                                <Link>Business Cards & Stationery</Link>
-                                                <Link>Fonts & Typography</Link>
-                                                <Link>Business Cards & Stationery</Link>
-                                                <Link>Portraits & Caricatures</Link>
-
-                                                <h1 className=' font-bold'>Art & Illustration</h1>
-
-                                                <Link>Logo Design</Link>
-                                                <Link>Brand Style Guides</Link>
-                                                <Link>Business Cards & Stationery</Link>
-                                                <Link>Portraits & Caricatures</Link>
-                                                <Link>Logo Design</Link>
-                                                <Link>Brand Style Guides</Link>
+                                                <div className='mt-4 cursor-pointer'>
+                                                    <Link className=' hover:text-blue-600'>Logo Design</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Brand Style Guides</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Business Cards & Stationery</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Portraits & Caricatures</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Logo Design</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Brand Style Guides</Link><br />
+                                                </div>
 
                                             </div>
                                             <div>
@@ -187,21 +342,53 @@ const Navbar = () => {
                                                     Logo & Brand Identity
                                                 </h1>
 
-                                                <Link>Logo Design</Link>
-                                                <Link>Brand Style Guides</Link>
-                                                <Link>Business Cards & Stationery</Link>
-                                                <Link>Fonts & Typography</Link>
-                                                <Link>Business Cards & Stationery</Link>
-                                                <Link>Portraits & Caricatures</Link>
+                                                <div className=' mt-4 cursor-pointer'>
+                                                    <Link className=' hover:text-blue-600'>Logo Design</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Brand Style Guides</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Business Cards & Stationery</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Fonts & Typography</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Business Cards & Stationery</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Portraits & Caricatures</Link><br />
+                                                </div>
 
-                                                <h1 className=' font-bold'>Art & Illustration</h1>
+                                                <h1 className=' font-bold mt-4'>Art & Illustration</h1>
 
-                                                <Link>Logo Design</Link>
-                                                <Link>Brand Style Guides</Link>
-                                                <Link>Business Cards & Stationery</Link>
-                                                <Link>Portraits & Caricatures</Link>
-                                                <Link>Logo Design</Link>
-                                                <Link>Brand Style Guides</Link>
+                                                <div className='mt-4 cursor-pointer'>
+                                                    <Link className=' hover:text-blue-600'>Logo Design</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Brand Style Guides</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Business Cards & Stationery</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Portraits & Caricatures</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Logo Design</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Brand Style Guides</Link><br />
+                                                </div>
+
+                                            </div>
+
+                                            <div>
+                                                <h1 className=' font-bold '>
+                                                    Logo & Brand Identity
+                                                </h1>
+
+                                                <div className=' mt-4 cursor-pointer'>
+                                                    <Link className=' hover:text-blue-600'>Logo Design</Link>
+                                                    <Link className=' hover:text-blue-600'>Brand Style Guides</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Business Cards & Stationery</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Fonts & Typography</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Business Cards & Stationery</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Portraits & Caricatures</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Fonts & Typography</Link><br />
+                                                </div>
+
+                                                <h1 className=' font-bold mt-4'>Art & Illustration</h1>
+                                                <div className=' mt-4 cursor-pointer'>
+
+                                                    <Link className=' hover:text-blue-600'>Logo Design</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Brand Style Guides</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Business Cards & Stationery</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Portraits & Caricatures</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Logo Design</Link><br />
+                                                    <Link className=' hover:text-blue-600'>Brand Style Guides</Link><br />
+                                                </div>
 
                                             </div>
 

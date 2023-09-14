@@ -11,6 +11,7 @@ import Message from './Pages/Messages/Message';
 import SMessage from './Pages/SMessage/SMessage';
 import Add from './Pages/Add/Add';
 import Bussiness from './Pages/Fiverr_Bussiness/Bussiness'
+import Login from './Pages/Login/Login'
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/smessage/:id" element={<SMessage />} />
         <Route path='/add' element={<Add />} />
         <Route path="/message" element={<Message />} />
+        <Route path='/login' element={<Login />} />
 
       </Routes>
       <Footer />

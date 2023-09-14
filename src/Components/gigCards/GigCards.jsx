@@ -3,18 +3,20 @@ import { gigs } from '../../data'
 import { Link } from 'react-router-dom';
 import stars from "../../assets/star.png"
 const GigCards = () => {
+
+
     return (
         <>
             <div className=' grid justify-items-center items-center mt-6  w-[100%]'>
-                <div className=' grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3   lg:grid-cols-3 xl:grid-cols-4 gap-2 w-[96%] '>
+                <div className=' grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3   lg:grid-cols-3 xl:grid-cols-4 gap-4 w-[80%] md:w-[80%] '>
                     {
                         gigs.map((item) => {
-                            const { id, img, pp, desc, username, price, star, } = item;
+                            const {  img, pp, desc, username, price, star, } = item;
                             return (
                                 <>
-                                    <Link to="/sgig/:id">
+                                    <Link to={`/sgig/${item.id}`}>
                                         <section className=' h-[100%] w-auto rounded-t-xl border'>
-                                            <img src={img} className=' h-auto w-auto md:w-80 object-cover rounded-xl' />
+                                            <img src={img} className=' h-auto w-auto  object-cover rounded-xl' />
                                             <div className='p-4 w-auto '>
                                                 <div className=' flex items-center justify-between w-[100%]  '>
                                                     <div className=' flex  items-center mt-2 w-auto'>

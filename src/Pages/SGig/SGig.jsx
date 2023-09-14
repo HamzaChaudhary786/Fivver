@@ -1,11 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import star from "../../assets/star.png"
 import SliderB from './SliderB'
 import tick from "../../assets/tick.png"
 import clock from "../../assets/clock.png"
 import cycle from "../../assets/recycle.png"
+import { useParams } from 'react-router-dom'
+import { gigs } from '../../data'
+import { FaStar } from "react-icons/fa"
+
+
 
 const SGig = () => {
+
+  const { id } = useParams();
+
+  const [rating, setRating] = useState(null)
+  const [rateColor, setRateColor] = useState(null);
+
+  let test = gigs.filter((gig) => gig.id === parseInt(id));
+
+
+
+
   return (
     <>
       <div className=' grid justify-items-center items-center p-14'>
@@ -25,18 +41,35 @@ const SGig = () => {
                   <span className='flex items-center'>
                     konanai Konan @konanai Level 1 Seller
                     <span className=' flex h-4 w-4 ml-1 mr-1  '>
-                      <img src={star} alt="" />
-                      <img src={star} alt="" />
-                      <img src={star} alt="" />
-                      <img src={star} alt="" />
-                      <img src={star} alt="" />
+                      {
+                        [...Array(5)].map((star, index) => {
+
+                          const curentRate = index + 1;
+                          return (
+                            <>
+                              <label htmlFor="">
+                                <input
+                                  type="radio"
+                                  value={curentRate} className='opacity-5'
+                                  onClick={() => setRating(curentRate)}
+                                />
+                                <FaStar size={20} className='-mt-6'
+                                  color={curentRate <= (rateColor || rating) ? "yellow" : "grey"}
+                                />
+
+                              </label>
+                            </>
+                          )
+                        })
+                      }
                     </span>
-                    <span className='ml-16' >5 (90) 1 Order in Queue</span>
+                    <span className='ml-24' >5 (90) 1 Order in Queue</span>
 
                   </span>
                 </div>
               </span>
             </div>
+
 
             <SliderB />
 
@@ -134,7 +167,8 @@ const SGig = () => {
                   <div className=' ml-4'>
                     <h1 className='font-bold'>ryviann
 
-                      <span className=' flex items-center'><span><img src="https://www.freeiconspng.com/thumbs/germany-flag/icons-of-germany-flag-fatherland-icon-png-3.png" className='h-8 w-8 object-cover' alt="" /></span>Germany</span></h1>
+                      <span className=' flex items-center'><span>
+                        <img src="https://www.freeiconspng.com/thumbs/germany-flag/icons-of-germany-flag-fatherland-icon-png-3.png" className='h-8 w-8 object-cover' alt="" /></span>Germany</span></h1>
                     <span className='flex items-center '>
                       <img className='h-4  w-4' src={star} alt="" />
                       <img className='h-4  w-4' src={star} alt="" />
@@ -182,48 +216,85 @@ const SGig = () => {
 
           </div>
 
-          <div className='sticky top-[150px] h-[400px] flex gap-[20px] p-[20px] border   bg-yellow-50  text-lg'>
+          <div className=' top-[150px] h-[400px] flex gap-[20px] p-[20px] border   bg-yellow-50  text-lg'>
             <section >
-              <div className=' flex justify-between font-bold  text-gray-800 text-opacity-70  '>
-                <span  >1 LoRA of your choice</span>
-                <span>PKR 4,313</span>
-              </div>
-              <p className='w-[95%] mt-3'>Includes 1 Lora, 5 example pictures and prompt activator</p>
-              <div className='flex mt-3'>
-                <span className='items-center flex'>
-                  <img src={clock} className='h-4 w-4' alt="" />
-                  <span className='ml-2 mr-2'>3 Days Delivery</span>
-                </span>
-                <span className='items-center flex'>
-                  <img src={cycle} className='h-4 w-4' alt="" />
+              {
+                test.map((product) => {
+                  console.log(product)
+                  return (
+                    <>
+                      <div key={id}>
+                        <div className=' flex justify-between font-bold  text-gray-800 text-opacity-70  '>
+                          <span  >1 LoRA of your choice</span>
+                          <span>PKR {product.price}</span>
+                        </div>
+                        <p className='w-[95%] mt-3'>{product.desc}</p>
+                        <div className='flex mt-3'>
+                          <span className='items-center flex'>
+                            <img src={clock} className='h-4 w-4' alt="" />
+                            <span className='ml-2 mr-2'> {product.delivery}</span>
+                          </span>
+                          <span className='items-center flex'>
+                            <img src={cycle} className='h-4 w-4' alt="" />
 
-                  <span className='ml-2 mr-2'>1 Revision</span>
-                </span>
-              </div>
-              <div className=' items-center text-lg text-gray-800 w-auto h-auto  '>
-                <span className='text-xl items-center flex  '><img src={tick} className='h-4 w-4' alt="" /><span className=' ml-2'> 5 prompts</span></span>
+                            <span className='ml-2 mr-2'>{product.revision}</span>
 
-                <span className='text-xl items-center flex'><img src={tick} className='h-4 w-4' alt="" /> <span className='ml-2'>Prompt creation</span></span>
+                            {
+                              [...Array(5)].map((star, index) => {
+
+                                const curentRate = index + 1;
+                                return (
+                                  <>
+                                    <label htmlFor="">
+                                      <input
+                                        type="radio"
+                                        value={curentRate} className='opacity-5'
+                                        onClick={() => setRating(curentRate)}
+                                      />
+                                      <FaStar size={20} className='-mt-6'
+                                        color={curentRate <= (rateColor || rating) ? "yellow" : "grey"}
+                                      />
+
+                                    </label>
+                                  </>
+                                )
+                              })
+                            }
+                          </span>
+                        </div>
+                        <div className=' items-center text-lg text-gray-800 w-auto h-auto  '>
+                          <span className='text-xl items-center flex  '><img src={tick} className='h-4 w-4' alt="" /><span className=' ml-2'> 5 prompts</span></span>
+
+                          <span className='text-xl items-center flex'><img src={tick} className='h-4 w-4' alt="" /> <span className='ml-2'>Prompt creation</span></span>
 
 
-                <span className='text-xl items-center flex '><img src={tick} className='h-4 w-4' alt="" /> <span className='ml-2'>Prompt delivery</span></span>
+                          <span className='text-xl items-center flex '><img src={tick} className='h-4 w-4' alt="" /> <span className='ml-2'>Prompt delivery</span></span>
 
 
-                <span className='text-xl items-center flex '><img src={tick} className='h-4 w-4' alt="" /> <span className='ml-2'>Sample images</span></span>
+                          <span className='text-xl items-center flex '><img src={tick} className='h-4 w-4' alt="" /> <span className='ml-2'>Sample images</span></span>
 
 
-                <span className='text-xl items-center flex '><img src={tick} className='h-4 w-4' alt="" /> <span className=' ml-2'>Instructions</span></span>
-              </div>
-              <div className=' text-center grid justify-items-center items-center mt-4 '>
-                <button className=' bg-black text-lg font-bold text-white w-[95%] h-10 rounded'>
-                  Continue
-                </button>
-              </div>
+                          <span className='text-xl items-center flex '><img src={tick} className='h-4 w-4' alt="" /> <span className=' ml-2'>Instructions</span></span>
+                        </div>
+                        <div className=' text-center grid justify-items-center items-center mt-4 '>
+                          <button className=' bg-black text-lg font-bold text-white w-[95%] h-10 rounded'>
+                            Continue
+                          </button>
+                        </div>
+                      </div>
+                    </>
+                  )
+                })
+              }
             </section>
+
+
           </div>
         </div>
 
-      </div>
+
+
+      </div >
     </>
   )
 }
