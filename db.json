@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "email": "hmzsattar99@gmail.com",
+      "name": "Hamza Ch",
+      "password": "admin",
+      "id": "moiz",
+      "phone": "03106278785",
+      "country": "india",
+      "address": "Green Acre",
+      "gender": "male"
+    }
+  ]
+}

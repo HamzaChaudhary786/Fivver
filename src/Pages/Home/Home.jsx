@@ -8,7 +8,20 @@ import Box from '../../Components/Box/Box'
 import ProjectCard from '../../Components/ProjectCard/ProjectCard'
 import GigCards from '../../Components/gigCards/GigCards'
 import tick from "../../assets/tick.png"
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 const Home = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+
+    let username = sessionStorage.getItem('username');
+    if (username === "" || username === null) {
+      navigate('/login')
+
+    }
+
+  }, [])
   return (
     <>
       <Feature />

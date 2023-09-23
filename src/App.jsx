@@ -12,12 +12,16 @@ import SMessage from './Pages/SMessage/SMessage';
 import Add from './Pages/Add/Add';
 import Bussiness from './Pages/Fiverr_Bussiness/Bussiness'
 import Login from './Pages/Login/Login'
+import Register from './Pages/Register/Register'
+import Logout from './Components/Logout/Logout'
 
 const App = () => {
   return (
     <>
       <Navbar />
       <Routes>
+        <Route path='/register' element={<Register />} />
+
         <Route path='/' element={<Home />} />
         <Route path='/gigs' element={<Gigs />} />
         <Route path='/bussiness' element={<Bussiness />} />
@@ -28,6 +32,7 @@ const App = () => {
         <Route path='/add' element={<Add />} />
         <Route path="/message" element={<Message />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/logout' element={<Logout />} />
 
       </Routes>
       <Footer />

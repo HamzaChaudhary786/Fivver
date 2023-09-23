@@ -24,12 +24,12 @@ const Slide = () => {
 
                 <div className='flex   items-center gap-6 w-[94%] md:w-[80%] h-full  overflow-x-scroll  transition-all ease-in-out duration-1000  scroll-smooth overflow-hidden scrollbar-hide ' id='slide'>
                     {
-                        cards.map((item) => {
+                        cards.map((item ,index) => {
 
                             const { title, desc, img, id } = item;
                             return (
                                 <>
-                                    <a href="#" target="_blank">
+                                    <a key={index} href="#" target="_blank">
                                         <div className='  flex h-64 w-64 rounded-xl  items-center duration-700 cursor-pointer  hover:scale-105 mt-4 '>
 
                                             <div>

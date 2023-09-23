@@ -10,11 +10,11 @@ const GigCards = () => {
             <div className=' grid justify-items-center items-center mt-6  w-[100%]'>
                 <div className=' grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3   lg:grid-cols-3 xl:grid-cols-4 gap-4 w-[80%] md:w-[80%] '>
                     {
-                        gigs.map((item) => {
-                            const {  img, pp, desc, username, price, star, } = item;
+                        gigs.map((item, index) => {
+                            const { img, pp, desc, username, price, star, } = item;
                             return (
                                 <>
-                                    <Link to={`/sgig/${item.id}`}>
+                                    <Link key={index} to={`/sgig/${item.id}`}>
                                         <section className=' h-[100%] w-auto rounded-t-xl border'>
                                             <img src={img} className=' h-auto w-auto  object-cover rounded-xl' />
                                             <div className='p-4 w-auto '>

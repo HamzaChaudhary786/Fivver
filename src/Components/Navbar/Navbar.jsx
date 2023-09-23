@@ -2,12 +2,37 @@ import React, { useEffect, useState } from 'react'
 import "./Navbar.scss"
 import { Link, useLocation } from 'react-router-dom';
 
+
 const Navbar = () => {
+
+    const [getdata, setGetData] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost:8000/users", {
+            method: "GET",
+            headers: { 'Content-Type': 'application/json' },
+        })
+            .then((res) => {
+                if (!res.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return res.json(); // Parse the response JSON
+            })
+            .then((data) => {
+                // Assuming `data` is an array or an object you want to store in your component state
+                setGetData(data);
+            })
+            .catch((err) => {
+                alert('Failed: ' + err.message);
+            });
+
+    }, []);
+
 
     const { pathname } = useLocation();
     const currentUser = {
         id: 1,
-        username: "john Doe",
+        username: "John Doe",
         isSeller: true
     }
     const [active, setActive] = useState(false);
@@ -42,8 +67,19 @@ const Navbar = () => {
                         </Link>
                         <span className='dot'>
                             .
-
                         </span>
+                        <span>
+                            {
+                                getdata.map((pdt) => {
+                                    return (
+                                        <>
+                                            <div key={pdt.id}>{pdt.name}</div>
+                                        </>
+                                    )
+
+                                })}
+                        </span>
+
                     </div>
                     <div className="links">
                         <Link to="/bussiness">Fiverr Bussiness</Link>
@@ -109,7 +145,6 @@ const Navbar = () => {
                             </div>
                         }
                         <span>English</span>
-                        <Link to="/login">Sign In</Link>
 
                         {!currentUser?.isSeller && <span>Become a Seller</span>}
                         {!currentUser && <button className='btn'>Join</button>}
@@ -134,7 +169,7 @@ const Navbar = () => {
                                                 }
                                                 <Link to="/order">Order</Link>
                                                 <Link to="/message">Messages</Link>
-                                                <Link>Logout</Link>
+                                                <Link to="/logout">Logout</Link>
 
                                             </div>
                                         }
