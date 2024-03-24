@@ -14,13 +14,15 @@ import Bussiness from './Pages/Fiverr_Bussiness/Bussiness'
 import Login from './Pages/Login/Login'
 import Register from './Pages/Register/Register'
 import Logout from './Components/Logout/Logout'
+import DeleteGig from './Pages/deleteGig/DeleteGig'
+import EditGig from './Pages/editGig/EditGig'
 
 const App = () => {
   return (
     <>
       <Navbar />
       <Routes>
-        <Route path='/register' element={<Register />} />
+        {/* <Route path='/register' element={<Register />} /> */}
 
         <Route path='/' element={<Home />} />
         <Route path='/gigs' element={<Gigs />} />
@@ -30,9 +32,13 @@ const App = () => {
         <Route path='/sgig/:id' element={<SGig />} />
         <Route path="/smessage/:id" element={<SMessage />} />
         <Route path='/add' element={<Add />} />
+
+        <Route path='/gigs/editGig/:id' element={<EditGig />} />
+
+        <Route path='/gigs/deleteGig/:id' element={<DeleteGig />} />
         <Route path="/message" element={<Message />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/logout' element={<Logout />} />
+        {/* <Route path='/login' element={<Login />} />
+        <Route path='/logout' element={<Logout />} /> */}
 
       </Routes>
       <Footer />

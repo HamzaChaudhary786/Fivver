@@ -20,26 +20,27 @@ const Slide = () => {
     return (
         <>
             <div className='flex items-center  justify-center  '>
-                <div className='grid items-center justify-items-center text-4xl text-opacity-50 hover:text-opacity-100  cursor-pointer  '><ion-icon name="caret-back-outline" onClick={SlideLeft}></ion-icon></div>
+                <div className='grid items-center justify-items-center text-4xl   cursor-pointer  '><ion-icon name="caret-back-outline" onClick={SlideLeft}></ion-icon></div>
 
-                <div className='flex   items-center gap-6 w-[94%] md:w-[80%] h-full  overflow-x-scroll  transition-all ease-in-out duration-1000  scroll-smooth overflow-hidden scrollbar-hide ' id='slide'>
+                <div className='flex  overflow-x-scroll  gap-x-6  scrollbar-hide ' id='slide'>
                     {
-                        cards.map((item ,index) => {
+                        cards.map((item, index) => {
 
                             const { title, desc, img, id } = item;
                             return (
                                 <>
                                     <a key={index} href="#" target="_blank">
-                                        <div className='  flex h-64 w-64 rounded-xl  items-center duration-700 cursor-pointer  hover:scale-105 mt-4 '>
+                                        <div className='relative  flex h-64 w-64 rounded-xl items-center duration-500 ease-in-out cursor-pointer mt-4 '>
 
-                                            <div>
+                                            <div className=''>
                                                 <img src={img} className=" h-64 w-64 object-cover  " />
                                             </div>
-                                        </div>
-                                        <div className=' -mt-60 justify-items-center text-yellow-50 grid text-lg text- font-bold absolute w-60'>
+                                            <div className='absolute top-10  justify-items-center text-yellow-50 grid text-lg font-bold  w-60'>
                                             <p>{title}</p>
                                             <p>{desc}</p>
                                         </div>
+                                        </div>
+                                  
                                     </a>
 
                                 </>

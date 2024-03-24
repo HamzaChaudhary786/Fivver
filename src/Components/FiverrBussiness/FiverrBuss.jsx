@@ -9,19 +9,19 @@ const FiverrBuss = () => {
             <div>
                 <Feature />
             </div>
-            <div className='grid justify-items-center items-center w-[100%]'>
-                <div className=' text-start w-[90%] mt-6 p-1'>
-                    <h1 className=' text-3xl font-bold '>Popular services for business</h1>
+            <div className=' px-4'>
+                <div className=' '>
+                    <h1 className=' text-3xl font-bold py-3 '>Popular services for business</h1>
 
                 </div>
-                <div className=' w-[90%] grid gap-4 justify-items-center items-center grid-cols-2 md:grid-cols-3 lg:grid-cols-4  xl:grid-cols-5 mt-4'>
+                <div className='grid grid-cols-2 lg:grid-cols-4 gap-4'>
 
                     {
                         FBussiness.map((item) => {
                             const { id, title, img, color } = item;
                             return (
                                 <>
-                                    <section className='w-[100%] h-52 grid justify-items-center rounded-lg ' style={{ backgroundColor: `${color}` }} >
+                                    <section className=' grid justify-items-center rounded-lg p-3' style={{ backgroundColor: `${color}` }} >
                                         <img src={img} alt="" className='h-32 w-36  object-contain ' />
                                         <span className='text-lg font-bold'>{title}</span>
 

@@ -5,27 +5,24 @@ import logo from "../../Assets/logo.png"
 
 const Feature = () => {
     return (
-        <div className='feature grid w-[100%] h-auto justify-items-center p-4 '>
-            <div className="container w-[100%] h-auto">
-                <div className="left grid  ">
+        <div className='feature grid  justify-items-center p-4 bg-green-700'>
+            <div className=" flex flex-col lg:flex-row items-center">
+                <div className=" grid gap-y-5">
 
-                    <h1>Find the right <i>freelance</i> service, right away</h1>
-                    <div className=''>
-                        <div className="search flex  bg-white w-[80%] md:w-auto rounded-lg">
-                            <div className="flex items-center w-[100%] ">
-                                <img src={logo} className='w-[25px] text-lg h-[20px] m-2 ' />
-                                <input type="text" className=' h-[40px] w-80 md:w-[100%] outline-none text-black' placeholder=' try building mobile app ' />
-                            </div>
-                            <button className='btn'>Search </button>
+                    <h1 className='text-4xl lg:text-5xl  font-bold p-2'>Find the right <i className='text-red-500'>freelance</i> service, right away</h1>
+                    <div className=" flex  bg-white justify-between gap-x-2 rounded-lg w-full lg:w-96">
+                        <div className=" flex  gap-x-2 items-center w-full  ">
+                            <img src={logo} className='h-5 w-8 ' />
+                            <input type="text" className='outline-none w-full' placeholder=' try building mobile app ' />
                         </div>
+                        <button className='btn p-2'>Search </button>
                     </div>
-                    <div className="popular">
+                    <div className="popular flex flex-wrap gap-2 mt-2 items-center">
                         <span>Popular:</span>
-                        <button>Web Design</button>
-                        <button>Wordpress</button>
-                        <button>Logo Design</button>
-                        <button>Services</button>
-
+                        <button className=' p-1 border rounded-lg '>Web Design</button>
+                        <button className=' p-1 border rounded-lg '>Wordpress</button>
+                        <button className=' p-1 border rounded-lg '>Logo Design</button>
+                        <button className=' p-1 border rounded-lg '>Services</button>
                     </div>
 
                 </div>

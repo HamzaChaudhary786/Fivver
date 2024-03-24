@@ -7,26 +7,26 @@ const Navbar = () => {
 
     const [getdata, setGetData] = useState([]);
 
-    useEffect(() => {
-        fetch("http://localhost:8000/users", {
-            method: "GET",
-            headers: { 'Content-Type': 'application/json' },
-        })
-            .then((res) => {
-                if (!res.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return res.json(); // Parse the response JSON
-            })
-            .then((data) => {
-                // Assuming `data` is an array or an object you want to store in your component state
-                setGetData(data);
-            })
-            .catch((err) => {
-                alert('Failed: ' + err.message);
-            });
+    // useEffect(() => {
+    //     fetch("http://localhost:8000/users", {
+    //         method: "GET",
+    //         headers: { 'Content-Type': 'application/json' },
+    //     })
+    //         .then((res) => {
+    //             if (!res.ok) {
+    //                 throw new Error('Network response was not ok');
+    //             }
+    //             return res.json(); // Parse the response JSON
+    //         })
+    //         .then((data) => {
+    //             // Assuming `data` is an array or an object you want to store in your component state
+    //             setGetData(data);
+    //         })
+    //         .catch((err) => {
+    //             alert('Failed: ' + err.message);
+    //         });
 
-    }, []);
+    // }, []);
 
 
     const { pathname } = useLocation();
@@ -57,31 +57,21 @@ const Navbar = () => {
     })
     return (
         <>
-            <div className={active || pathname !== "/" ? "navbar active" : "navbar"}>
-                <div className="container w-full flex justify-between p-4">
-                    <div className=" text-3xl font-bold  invisible w-0 md:w-auto sm:visible " >
-                        <Link to="/" className='link'>
-                            <span className='text'>
+            <div className={active || pathname !== "/" ? "navbar active w-full" : "navbar"}>
+                <div className=" flex justify-between p-4 w-full">
+                    <div className=' items-center hidden md:block  flex'>
+                        <Link to="/" className=' text-3xl font-bold '>
+                            <span className=''>
                                 Fiverr
                             </span>
                         </Link>
-                        <span className='dot'>
+                        <span className='text-3xl'>
                             .
                         </span>
-                        <span>
-                            {
-                                getdata.map((pdt) => {
-                                    return (
-                                        <>
-                                            <div key={pdt.id}>{pdt.name}</div>
-                                        </>
-                                    )
-
-                                })}
-                        </span>
-
                     </div>
-                    <div className="links">
+
+
+                    <div className="links flex gap-x-3 items-center justify-around w-full">
                         <Link to="/bussiness">Fiverr Bussiness</Link>
                         <span onClick={() => setExplore(!explore)}>Explore</span>
                         {!explore &&
@@ -151,12 +141,12 @@ const Navbar = () => {
                         {
                             currentUser && (
                                 <>
-                                    <div className='user pr-2' onClick={() => setOpen(!open)}>
-                                        <img src="https://img.freepik.com/free-photo/close-up-young-successful-man-smiling-camera-standing-casual-outfit-against-blue-background_1258-65479.jpg" />
+                                    <div className='user pr-1 flex gap-x-1 items-center relative' onClick={() => setOpen(!open)}>
+                                        <img src="https://img.freepik.com/free-photo/close-up-young-successful-man-smiling-camera-standing-casual-outfit-against-blue-background_1258-65479.jpg" className=' h-7 w-7 rounded-full' />
                                         <span> {currentUser?.username}</span>
                                         {
                                             !open &&
-                                            <div className="option">
+                                            <div className="option absolute p-6 bg-white text-black flex flex-col w-36  top-9">
                                                 {
                                                     currentUser?.isSeller && (
                                                         <>
@@ -180,25 +170,28 @@ const Navbar = () => {
                         }
                     </div>
                 </div>
+
+
+
                 {
                     (active || pathname !== "/") && (
                         <>
                             <hr className='w-[100%]' />
 
 
-                            <div className=" w-full  pl-3 pr-3 p-1 flex justify-between ease-in-out duration-500 transition-all text-gray-700 overflow-x-scroll md:overflow-x-hidden   ">
+                            <div className="w-full  flex flex-row whitespace-nowrap px-4 gap-x-4 overflow-x-auto   ">
 
 
 
 
-                                <div className='group w-auto '>
+                                <div className='group'>
                                     <Link to="/" className='group ' >Grahics & Design</Link>
 
 
-                                    <div className='absolute w-28 border-4 border-l-0 border-r-0 border-b-0   hover:border-t-blue-600 hidden group-hover:block     hover:block'>
+                                    <div className='absolute w-28 border-4 border-l-0 border-r-0 border-b-0   hover:border-t-blue-600 hidden group-hover:block hover:block'>
 
 
-                                        <div className=' flex-wrap overflow-y-scroll w-screen  h-[1200px]  flex  gap-x-10 p-5 md:w-[1000px] md:h-[800px]  bg-gray-200 text-black mt-1 '>
+                                        <div className=' w-screen  gap-x-10 p-8  flex flex-col duration-500  overflow-y-auto   lg:flex-row   bg-gray-200 text-black mt-1 '>
                                             <div className=''>
                                                 <h1 className=' font-bold'>
                                                     Logo & Brand Identity
@@ -313,7 +306,7 @@ const Navbar = () => {
 
 
                                 </div>
-                                <div className=' group w-auto'>
+                                <div className=' group'>
                                     <Link to="/" className=' group'>Video & Animation</Link>
 
                                     <div className='absolute  group-hover:block hover:block hidden   w-32 border-4 border-b-0 border-r-0 border-l-0 hover:border-t-blue-600 h-auto '>
@@ -433,6 +426,8 @@ const Navbar = () => {
 
 
                                 </div>
+
+
                                 <div><Link to="/" className=''>Ai Services</Link></div>
                                 <div><Link to="/" className='' >Writting & Translation</Link></div>
                                 <div><Link to="/" className=''>Digital Marketing</Link></div>

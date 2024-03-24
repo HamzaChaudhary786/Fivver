@@ -13,15 +13,15 @@ import { useNavigate } from 'react-router-dom'
 const Home = () => {
   const navigate = useNavigate();
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    let username = sessionStorage.getItem('username');
-    if (username === "" || username === null) {
-      navigate('/login')
+  //   let username = sessionStorage.getItem('username');
+  //   if (username === "" || username === null) {
+  //     navigate('/login')
 
-    }
+  //   }
 
-  }, [])
+  // }, [])
   return (
     <>
       <Feature />

@@ -1,73 +1,73 @@
-.feature {
-    height: 600px;
+// .feature {
+//     height: 600px;
 
-    display: flex;
-    justify-items: center;
-    background-color: #013914;
-    color: white;
+//     display: flex;
+//     justify-items: center;
+//     background-color: #013914;
+//     color: white;
 
-    .container {
-        justify-content: center;
-        display: flex;
-        align-items: center;
-        .left {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
+//     .container {
+//         justify-content: center;
+//         display: flex;
+//         align-items: center;
+//         .left {
+//             display: flex;
+//             flex-direction: column;
+//             gap: 30px;
 
-            h1 {
-                font-size: 30px;
-                font-weight: bold;
-                width: 500px;
+//             h1 {
+//                 font-size: 30px;
+//                 font-weight: bold;
+//                 width: 500px;
 
-                i{
+//                 i{
                     
-                    font-weight: 300;
-                }
-            }
+//                     font-weight: 300;
+//                 }
+//             }
 
-            .search {
+//             .search {
               
 
             
 
             
 
-                .btn {
-                    background-color: aqua;
-                    padding: 8px;
-                    border-radius: 2px;
+//                 .btn {
+//                     background-color: aqua;
+//                     padding: 8px;
+//                     border-radius: 2px;
 
-                }
-
-
-            }
-
-            .popular {
-                button {
-                    margin: 8px;
-                    background-color: transparent;
-                    border: 1px solid white;
-                    border-radius: 20px;
-                    padding: 4px;
-                    font-size: 14px;
+//                 }
 
 
-                }
-            }
+//             }
 
-        }
-
-
-        .right {
-            height: 100%;
-
-            img {
-                height: 100%;
-                object-fit: contain;
-            }
-        }
-    }
+//             .popular {
+//                 button {
+//                     margin: 8px;
+//                     background-color: transparent;
+//                     border: 1px solid white;
+//                     border-radius: 20px;
+//                     padding: 4px;
+//                     font-size: 14px;
 
 
-}
+//                 }
+//             }
+
+//         }
+
+
+//         .right {
+//             height: 100%;
+
+//             img {
+//                 height: 100%;
+//                 object-fit: contain;
+//             }
+//         }
+//     }
+
+
+// }

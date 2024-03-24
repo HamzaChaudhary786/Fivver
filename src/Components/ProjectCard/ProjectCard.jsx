@@ -27,7 +27,7 @@ const ProjectCard = () => {
                 <div className='flex items-center  justify-center mt-4 '>
                     <div className='grid items-center justify-items-center text-4xl text-opacity-50 hover:text-opacity-100 text-black cursor-pointer  '><ion-icon name="caret-back-outline" onClick={SlideLeft}></ion-icon></div>
 
-                    <div className='flex items-center gap-6  w-[94%] h-full  overflow-x-scroll  transition-all ease-in-out duration-1000  scroll-smooth overflow-y-hidden ' id='slidep'>
+                    <div className='flex items-center gap-6  w-[94%] h-full  overflow-x-scroll  ease-in-out duration-1000  scroll-smooth  ' id='slidep'>
                         {
                             projects.map((item) => {
 
