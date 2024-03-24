@@ -1,7 +1,7 @@
 import React from 'react'
-import fab from "../../Assets/t1.png"
-import net from "../../Assets/t2.png"
-import gog from "../../Assets/t3.png"
+import fab from "../../assets/t1.png"
+import net from "../../assets/t2.png"
+import gog from "../../assets/t3.png"
 
 const TrustedBy = () => {
     return (
