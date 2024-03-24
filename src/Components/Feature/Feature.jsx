@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Feature.scss"
-import land from "../../Assets/land.png"
-import logo from "../../Assets/logo.png"
+import land from "../../assets/land.png"
+import logo from "../../assets/logo.png"
 
 const Feature = () => {
     return (
