@@ -51,3 +51,27 @@
 ::-webkit-scrollbar {
   display: none;
 }
+
+
+#animated-heading {
+  opacity: 0.6;
+  transition: opacity 0.5s ease;
+}
+
+#animated-heading.visible {
+  opacity: 1;
+}
+
+.animated-word {
+  opacity: 0;
+  animation: fadeInWord 1s ease forwards;
+}
+
+@keyframes fadeInWord {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

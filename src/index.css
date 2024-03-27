@@ -4,9 +4,86 @@
 
 
 
-*{
-    -ms-overflow-style: none;
+* {
+  -ms-overflow-style: none;
 }
+
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
+}
+
+
+#animated-heading {
+  opacity: 0.6;
+  transition: opacity 0.5s ease;
+  /* Adjust the duration as needed */
+}
+
+#animated-heading.visible {
+  opacity: 1;
+}
+
+
+.logo-container:hover .animate-loop-scroll {
+  animation-play-state: paused;
+}
+
+.animated-text {
+  position: relative;
+  font-size: 4rem;
+  font-weight: bold;
+  padding: 1rem;
+  background-clip: text;
+  background-image: linear-gradient(to bottom right, yellow, rose, pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.animated-text span {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: hideShowAnimation 4s infinite alternate, rotateAnimation 4s infinite alternate;
+}
+
+@keyframes hideShowAnimation {
+  0% {
+    opacity: 0.1;
+  }
+
+  30% {
+    opacity: 0.3;
+  }
+
+  30% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg);
+    text-shadow: none;
+    /* No shadow at the beginning */
+  }
+
+  99% {
+    transform: rotate(360deg);
+    text-shadow: none;
+    /* No shadow before completion */
+  }
+
+  100% {
+    transform: rotate(360deg);
+    text-shadow: 0 0 10px rgba(0, 0, 255, );
+    animation-delay: 10s;
+  }
 }

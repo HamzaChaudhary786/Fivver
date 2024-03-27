@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from "./Components/Navbar/Navbar"
 import Footer from "./Components/Footer/Footer"
 import { Route, Routes } from 'react-router-dom'
@@ -16,8 +16,13 @@ import Register from './Pages/Register/Register'
 import Logout from './Components/Logout/Logout'
 import DeleteGig from './Pages/deleteGig/DeleteGig'
 import EditGig from './Pages/editGig/EditGig'
+import GigDetail from './Pages/gigDetail/GigDetail'
+import smoothScroll from './Components/SmoothScroll/smoothScroll'
 
 const App = () => {
+  useEffect(() => {
+    smoothScroll();
+  }, [])
   return (
     <>
       <Navbar />
@@ -31,6 +36,8 @@ const App = () => {
         <Route path="/order" element={<Order />} />
         <Route path='/sgig/:id' element={<SGig />} />
         <Route path="/smessage/:id" element={<SMessage />} />
+        <Route path="/gigs/gigDetail/:id" element={<GigDetail />} />
+
         <Route path='/add' element={<Add />} />
 
         <Route path='/gigs/editGig/:id' element={<EditGig />} />

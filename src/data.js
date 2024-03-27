@@ -49,6 +49,30 @@ export const cards = [
         desc: "Color you dreams",
         img: "https://images.pexels.com/photos/15032623/pexels-photo-15032623.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
     },
+    {
+        id: 9,
+        title: "Illustration",
+        desc: "Color you dreams",
+        img: "https://images.pexels.com/photos/15032623/pexels-photo-15032623.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+    },
+    {
+        id: 11,
+        title: "SEO",
+        desc: "Unlock growth online",
+        img: "https://images.pexels.com/photos/4820241/pexels-photo-4820241.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+    },
+    {
+        id: 10,
+        title: "Illustration",
+        desc: "Color you dreams",
+        img: "https://images.pexels.com/photos/15032623/pexels-photo-15032623.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+    },
+    {
+        id: 12,
+        title: "Social Media",
+        desc: "Reach more customers",
+        img: "https://images.pexels.com/photos/11378899/pexels-photo-11378899.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+    },
 ];
 
 export const projects = [

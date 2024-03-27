@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import star from "../../assets/star.png"
 import SliderB from './SliderB'
 import tick from "../../assets/tick.png"
@@ -7,26 +7,40 @@ import cycle from "../../assets/recycle.png"
 import { useParams } from 'react-router-dom'
 import { gigs } from '../../data'
 import { FaStar } from "react-icons/fa"
-
-
+import axios from 'axios'
 
 const SGig = () => {
+  const { id } = useParams()
 
-  const { id } = useParams();
+  const [data, setData] = useState({})
 
+
+  useEffect(() => {
+    axios.get(`http://localhost:3001/gigs/${id}`).then((res) => {
+
+      setData(res.data)
+
+
+
+    }).catch((err) => {
+      console.log("error", err)
+    })
+  }, [])
+
+  console.log("single data", data)
   const [rating, setRating] = useState(null)
   const [rateColor, setRateColor] = useState(null);
 
-  let test = gigs.filter((gig) => gig.id === parseInt(id));
+
 
 
 
 
   return (
     <>
-      <div className=' grid justify-items-center items-center p-14'>
-        <div className=' w-[98%] h-auto grid grid-cols-2 justify-items-center' >
-          <div>
+      <div className=' grid  items-center p-14'>
+        <div className=' grid  lg:grid-cols-2 justify-items-center gap-10' >
+          <div className='grid gap-y-5'>
             <div className=' text-lg '>
               <span> Fiverr
                 /Graphics & Design / AI Artists / Custom Image Prompts
@@ -71,7 +85,10 @@ const SGig = () => {
             </div>
 
 
-            <SliderB />
+            {/* <SliderB /> */}
+            <div>
+              <img src={data.poster} alt="" />
+            </div>
 
             <div>
               <h2 className=' text-xl font-bold'>
@@ -87,127 +104,7 @@ const SGig = () => {
                 The LoRA made for this Gig will not be published on my profile except if you authorize me to do it, as it is a paid service only for your personal use.
 
               </p>
-              <hr className=' w-[100%] border mt-8' />
-              <div>
 
-                <div>
-                  <div className=' flex items-center mt-6 '>
-                    <div>
-                      <img src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/0a942eaf07f700413307cb83bcc725db-1679042705998/bb5a591c-bcff-4ee0-9cdd-db64f26eee95.png" className='h-16 w-16 rounded-full object-cover' alt="" />
-                    </div>
-                    <div className=' ml-4'>
-                      <h1>Kato
-                        <span className='ml-2'>@kattnolett0</span></h1>
-                      <span className='flex items-center '>
-                        <img className='h-4  w-4' src={star} alt="" />
-                        <img className='h-4  w-4' src={star} alt="" />
-                        <img className='h-4  w-4' src={star} alt="" />
-                        <img className='h-4  w-4' src={star} alt="" />
-                        <img className='h-4  w-4' src={star} alt="" />
-                        (32)
-                      </span>
-                      <button className='h-8 w-28 text-center border rounded border-black mt-1'>Contact Me</button>
-                    </div>
-                  </div>
-                  <div className='w-[80%] h-auto border  mt-4 p-8'>
-                    <div className=' flex'>
-                      <div>
-                        <div>
-                          <span>From</span>
-                          <h1 className="font-bold text-opacity-70">Argentina</h1>
-                        </div>
-                        <div>
-                          <span>Avg. response time</span>
-                          <h1 className="font-bold text-opacity-70">1 hour</h1>
-                        </div>
-                        <div>
-                          <span>Languages</span>
-                          <h1 className="font-bold text-opacity-70">English, Spanish, Japanese</h1>
-                        </div>
-                      </div>
-                      <div className=' ml-4'>
-                        <div>
-                          <span>
-                            Argentina Member since
-                          </span>
-                          <h1 className="font-bold text-opacity-70">Jan 2023
-                          </h1>
-                        </div>
-                        <div>
-                          <span>
-                            Last delivery
-
-                          </span>
-                          <h1 className="font-bold text-opacity-70">About 10 hours
-                          </h1>
-                        </div>
-                      </div>
-                    </div>
-
-                    <hr className=' w-[80%] border mt-4' />
-                    <p className='mt-4'>Hi! I'm Lucas, I've been using AI for a while so now I think I can take some requests.
-                      I keep studying and learning more about the AI generated images everyday, so I'll do my best!</p>
-
-
-                  </div>
-
-
-                </div>
-
-              </div>
-
-              <hr className=' w-[100%] border mt-8' />
-
-
-              <div className="reviews">
-                <div className=' flex items-center mt-6 '>
-                  <div>
-                    <img src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/0a942eaf07f700413307cb83bcc725db-1679042705998/bb5a591c-bcff-4ee0-9cdd-db64f26eee95.png" className='h-16 w-16 rounded-full object-cover' alt="" />
-                  </div>
-                  <div className=' ml-4'>
-                    <h1 className='font-bold'>ryviann
-
-                      <span className=' flex items-center'><span>
-                        <img src="https://www.freeiconspng.com/thumbs/germany-flag/icons-of-germany-flag-fatherland-icon-png-3.png" className='h-8 w-8 object-cover' alt="" /></span>Germany</span></h1>
-                    <span className='flex items-center '>
-                      <img className='h-4  w-4' src={star} alt="" />
-                      <img className='h-4  w-4' src={star} alt="" />
-                      <img className='h-4  w-4' src={star} alt="" />
-                      <img className='h-4  w-4' src={star} alt="" />
-                      <img className='h-4  w-4' src={star} alt="" />
-                      (32)
-                    </span>
-
-                  </div>
-                </div>
-                <p className=' ml-16 mt-4'>Was a bit skeptical about ai art to begin with but was positively surprised by the result. They managed to translate my description into something that fit very well with what I wanted and was even able to modify minor details after the fact. They definitely know how to whisper to the ai!</p>
-              </div>
-
-              <hr className=' w-[100%] border mt-8' />
-
-
-              <div className="reviews">
-                <div className=' flex items-center mt-6 '>
-                  <div>
-                    <img src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/0a942eaf07f700413307cb83bcc725db-1679042705998/bb5a591c-bcff-4ee0-9cdd-db64f26eee95.png" className='h-16 w-16 rounded-full object-cover' alt="" />
-                  </div>
-                  <div className=' ml-4'>
-                    <h1 className='font-bold'>ryviann
-
-                      <span className=' flex items-center'><span><img src="https://www.freeiconspng.com/thumbs/germany-flag/icons-of-germany-flag-fatherland-icon-png-3.png" className='h-8 w-8 object-cover' alt="" /></span>Germany</span></h1>
-                    <span className='flex items-center '>
-                      <img className='h-4  w-4' src={star} alt="" />
-                      <img className='h-4  w-4' src={star} alt="" />
-                      <img className='h-4  w-4' src={star} alt="" />
-                      <img className='h-4  w-4' src={star} alt="" />
-                      <img className='h-4  w-4' src={star} alt="" />
-                      (32)
-                    </span>
-
-                  </div>
-                </div>
-                <p className=' ml-16 mt-4'>Was a bit skeptical about ai art to begin with but was positively surprised by the result. They managed to translate my description into something that fit very well with what I wanted and was even able to modify minor details after the fact. They definitely know how to whisper to the ai!</p>
-              </div>
 
 
             </div>
@@ -216,79 +113,196 @@ const SGig = () => {
 
           </div>
 
-          <div className=' top-[150px] h-[400px] flex gap-[20px] p-[20px] border   bg-yellow-50  text-lg'>
+          <div className=' sticky  top-[150px] h-[400px] flex gap-[20px] p-[20px] border   bg-yellow-50  text-lg'>
             <section >
-              {
-                test.map((product) => {
-                  console.log(product)
-                  return (
-                    <>
-                      <div key={id}>
-                        <div className=' flex justify-between font-bold  text-gray-800 text-opacity-70  '>
-                          <span  >1 LoRA of your choice</span>
-                          <span>PKR {product.price}</span>
-                        </div>
-                        <p className='w-[95%] mt-3'>{product.desc}</p>
-                        <div className='flex mt-3'>
-                          <span className='items-center flex'>
-                            <img src={clock} className='h-4 w-4' alt="" />
-                            <span className='ml-2 mr-2'> {product.delivery}</span>
-                          </span>
-                          <span className='items-center flex'>
-                            <img src={cycle} className='h-4 w-4' alt="" />
 
-                            <span className='ml-2 mr-2'>{product.revision}</span>
+              <div key={id}>
+                <div className=' flex justify-between font-bold  text-gray-800 text-opacity-70  '>
+                  <span  >{data.title}</span>
+                  <span>PKR {data.price}</span>
+                </div>
+                <p className='w-[95%] mt-3'>{data.description}</p>
+                <div className='flex mt-3'>
+                  <span className='items-center flex'>
+                    <img src={clock} className='h-4 w-4' alt="" />
+                    <span className='ml-2 mr-2'> {data.delivery}</span>
+                  </span>
+                  <span className='items-center flex'>
+                    <img src={cycle} className='h-4 w-4' alt="" />
 
-                            {
-                              [...Array(5)].map((star, index) => {
+                    <span className='ml-2 mr-2'>{data.revision}</span>
 
-                                const curentRate = index + 1;
-                                return (
-                                  <>
-                                    <label htmlFor="">
-                                      <input
-                                        type="radio"
-                                        value={curentRate} className='opacity-5'
-                                        onClick={() => setRating(curentRate)}
-                                      />
-                                      <FaStar size={20} className='-mt-6'
-                                        color={curentRate <= (rateColor || rating) ? "yellow" : "grey"}
-                                      />
+                    {
+                      [...Array(5)].map((star, index) => {
 
-                                    </label>
-                                  </>
-                                )
-                              })
-                            }
-                          </span>
-                        </div>
-                        <div className=' items-center text-lg text-gray-800 w-auto h-auto  '>
-                          <span className='text-xl items-center flex  '><img src={tick} className='h-4 w-4' alt="" /><span className=' ml-2'> 5 prompts</span></span>
+                        const curentRate = index + 1;
+                        return (
+                          <>
+                            <label htmlFor="">
+                              <input
+                                type="radio"
+                                value={curentRate} className='opacity-5'
+                                onClick={() => setRating(curentRate)}
+                              />
+                              <FaStar size={20} className='-mt-6'
+                                color={curentRate <= (rateColor || rating) ? "yellow" : "grey"}
+                              />
 
-                          <span className='text-xl items-center flex'><img src={tick} className='h-4 w-4' alt="" /> <span className='ml-2'>Prompt creation</span></span>
+                            </label>
+                          </>
+                        )
+                      })
+                    }
+                  </span>
+                </div>
+                <div className=' items-center text-lg text-gray-800 w-auto h-auto  '>
+                  <span className='text-xl items-center flex  '><img src={tick} className='h-4 w-4' alt="" /><span className=' ml-2'> 5 prompts</span></span>
+
+                  <span className='text-xl items-center flex'><img src={tick} className='h-4 w-4' alt="" /> <span className='ml-2'>Prompt creation</span></span>
 
 
-                          <span className='text-xl items-center flex '><img src={tick} className='h-4 w-4' alt="" /> <span className='ml-2'>Prompt delivery</span></span>
+                  <span className='text-xl items-center flex '><img src={tick} className='h-4 w-4' alt="" /> <span className='ml-2'>Prompt delivery</span></span>
 
 
-                          <span className='text-xl items-center flex '><img src={tick} className='h-4 w-4' alt="" /> <span className='ml-2'>Sample images</span></span>
+                  <span className='text-xl items-center flex '><img src={tick} className='h-4 w-4' alt="" /> <span className='ml-2'>Sample images</span></span>
 
 
-                          <span className='text-xl items-center flex '><img src={tick} className='h-4 w-4' alt="" /> <span className=' ml-2'>Instructions</span></span>
-                        </div>
-                        <div className=' text-center grid justify-items-center items-center mt-4 '>
-                          <button className=' bg-black text-lg font-bold text-white w-[95%] h-10 rounded'>
-                            Continue
-                          </button>
-                        </div>
-                      </div>
-                    </>
-                  )
-                })
-              }
+                  <span className='text-xl items-center flex '><img src={tick} className='h-4 w-4' alt="" /> <span className=' ml-2'>Instructions</span></span>
+                </div>
+                <div className=' text-center grid justify-items-center items-center mt-4 '>
+                  <button className=' bg-black text-lg font-bold text-white w-[95%] h-10 rounded'>
+                    Continue
+                  </button>
+                </div>
+              </div>
+
             </section>
 
 
+          </div>
+        </div>
+
+        <div className='lg:w-[50%]'>
+          <hr className=' w-[100%] border mt-8' />
+          <div>
+
+            <div>
+              <div className=' flex items-center mt-6 '>
+                <div>
+                  <img src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/0a942eaf07f700413307cb83bcc725db-1679042705998/bb5a591c-bcff-4ee0-9cdd-db64f26eee95.png" className='h-16 w-16 rounded-full object-cover' alt="" />
+                </div>
+                <div className=' ml-4'>
+                  <h1>Kato
+                    <span className='ml-2'>@kattnolett0</span></h1>
+                  <span className='flex items-center '>
+                    <img className='h-4  w-4' src={star} alt="" />
+                    <img className='h-4  w-4' src={star} alt="" />
+                    <img className='h-4  w-4' src={star} alt="" />
+                    <img className='h-4  w-4' src={star} alt="" />
+                    <img className='h-4  w-4' src={star} alt="" />
+                    (32)
+                  </span>
+                  <button className='h-8 w-28 text-center border rounded border-black mt-1'>Contact Me</button>
+                </div>
+              </div>
+              <div className='w-[80%] h-auto border  mt-4 p-8'>
+                <div className=' flex'>
+                  <div>
+                    <div>
+                      <span>From</span>
+                      <h1 className="font-bold text-opacity-70">Argentina</h1>
+                    </div>
+                    <div>
+                      <span>Avg. response time</span>
+                      <h1 className="font-bold text-opacity-70">1 hour</h1>
+                    </div>
+                    <div>
+                      <span>Languages</span>
+                      <h1 className="font-bold text-opacity-70">English, Spanish, Japanese</h1>
+                    </div>
+                  </div>
+                  <div className=' ml-4'>
+                    <div>
+                      <span>
+                        Argentina Member since
+                      </span>
+                      <h1 className="font-bold text-opacity-70">Jan 2023
+                      </h1>
+                    </div>
+                    <div>
+                      <span>
+                        Last delivery
+
+                      </span>
+                      <h1 className="font-bold text-opacity-70">About 10 hours
+                      </h1>
+                    </div>
+                  </div>
+                </div>
+
+                <hr className=' w-[80%] border mt-4' />
+                <p className='mt-4'>Hi! I'm Lucas, I've been using AI for a while so now I think I can take some requests.
+                  I keep studying and learning more about the AI generated images everyday, so I'll do my best!</p>
+
+
+              </div>
+
+
+            </div>
+
+          </div>
+
+          <hr className=' w-[100%] border mt-8' />
+
+
+          <div className="reviews">
+            <div className=' flex items-center mt-6 '>
+              <div>
+                <img src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/0a942eaf07f700413307cb83bcc725db-1679042705998/bb5a591c-bcff-4ee0-9cdd-db64f26eee95.png" className='h-16 w-16 rounded-full object-cover' alt="" />
+              </div>
+              <div className=' ml-4'>
+                <h1 className='font-bold'>ryviann
+
+                  <span className=' flex items-center'><span>
+                    <img src="https://www.freeiconspng.com/thumbs/germany-flag/icons-of-germany-flag-fatherland-icon-png-3.png" className='h-8 w-8 object-cover' alt="" /></span>Germany</span></h1>
+                <span className='flex items-center '>
+                  <img className='h-4  w-4' src={star} alt="" />
+                  <img className='h-4  w-4' src={star} alt="" />
+                  <img className='h-4  w-4' src={star} alt="" />
+                  <img className='h-4  w-4' src={star} alt="" />
+                  <img className='h-4  w-4' src={star} alt="" />
+                  (32)
+                </span>
+
+              </div>
+            </div>
+            <p className=' ml-16 mt-4'>Was a bit skeptical about ai art to begin with but was positively surprised by the result. They managed to translate my description into something that fit very well with what I wanted and was even able to modify minor details after the fact. They definitely know how to whisper to the ai!</p>
+          </div>
+
+          <hr className=' w-[100%] border mt-8' />
+
+
+          <div className="reviews">
+            <div className=' flex items-center mt-6 '>
+              <div>
+                <img src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/0a942eaf07f700413307cb83bcc725db-1679042705998/bb5a591c-bcff-4ee0-9cdd-db64f26eee95.png" className='h-16 w-16 rounded-full object-cover' alt="" />
+              </div>
+              <div className=' ml-4'>
+                <h1 className='font-bold'>ryviann
+
+                  <span className=' flex items-center'><span><img src="https://www.freeiconspng.com/thumbs/germany-flag/icons-of-germany-flag-fatherland-icon-png-3.png" className='h-8 w-8 object-cover' alt="" /></span>Germany</span></h1>
+                <span className='flex items-center '>
+                  <img className='h-4  w-4' src={star} alt="" />
+                  <img className='h-4  w-4' src={star} alt="" />
+                  <img className='h-4  w-4' src={star} alt="" />
+                  <img className='h-4  w-4' src={star} alt="" />
+                  <img className='h-4  w-4' src={star} alt="" />
+                  (32)
+                </span>
+
+              </div>
+            </div>
+            <p className=' ml-16 mt-4'>Was a bit skeptical about ai art to begin with but was positively surprised by the result. They managed to translate my description into something that fit very well with what I wanted and was even able to modify minor details after the fact. They definitely know how to whisper to the ai!</p>
           </div>
         </div>
 

@@ -49,7 +49,7 @@ const MyGigs = () => {
                         <td>{gig.rNumber}</td>
                         <td>
                           <div className="flex justify-center gap-x-4">
-                            <Link to={`/gigs/details/${gig._id}`}>
+                            <Link to={`/gigs/gigDetail/${gig._id}`}>
                               <BsInfoCircle className=" text-2xl text-green-800" />
                             </Link>
                             <Link to={`/gigs/editGig/${gig._id}`}>
