@@ -21,7 +21,7 @@ const Slide = () => {
                     trigger: section_2,
                     start: "center center", // Start animation from the center of the screen
                     pin: true,
-                    scrub: 15,
+                    scrub: 12,
                     snap: 1 / (box_items.length - 1),
                     end: () => `+=${section_2.scrollWidth - section_2.offsetWidth}` // Adjust end value
                 }
@@ -31,7 +31,7 @@ const Slide = () => {
 
     return (
         <div className=' grid justify-items-center items-center' ref={sectionRef} >
-            <div className='container overflow-x-auto'>
+            <div className='container overflow-x-auto  '>
                 <div className='flex gap-x-6'>
                     {cards.map((item, index) => {
                         const { title, desc, img, id } = item;

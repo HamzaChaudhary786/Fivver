@@ -39,11 +39,12 @@
   -webkit-text-fill-color: transparent;
 }
 
-.animated-text span {
+.animated-text i {
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
   animation: hideShowAnimation 4s infinite alternate, rotateAnimation 4s infinite alternate;
+  
 }
 
 @keyframes hideShowAnimation {
@@ -56,11 +57,11 @@
   }
 
   30% {
-    opacity: 0.5;
+    opacity: 0.4;
   }
 
   50% {
-    opacity: 0.8;
+    opacity: 0.6;
   }
 
   100% {

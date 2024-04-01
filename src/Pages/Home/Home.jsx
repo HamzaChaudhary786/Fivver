@@ -10,6 +10,7 @@ import GigCards from '../../Components/gigCards/GigCards'
 import tick from "../../assets/tick.png"
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Test from '../../Components/Test/Text'
 const Home = () => {
   const navigate = useNavigate();
 
@@ -109,6 +110,7 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <Test />
 
 
         <Box />
